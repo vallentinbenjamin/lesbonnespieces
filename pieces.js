@@ -12,19 +12,17 @@ prixElement.innerText = `Prix: ${article.prix} € (${article.prix < 35 ? "€" 
 const categorieElement = document.createElement("p");
 categorieElement.innerText = article.categorie;
 
+const descriptionElement = document.createElement("p");
+descriptionElement.innerText = article.description ?? "pas de description pour le moment";
+
+const stockElement = document.createElement("p");
+stockElement.innerText = article.disponibilite ? "en stock" : "rupture de stock";
+
 const sectionFiches = document.querySelector(".fiches");
 sectionFiches.appendChild(imageElement);
 sectionFiches.appendChild(nomElement);
 sectionFiches.appendChild(prixElement);
 sectionFiches.appendChild(categorieElement);
-
-// // …
-// const prixElement = document.createElement("p");
-// prixElement.innerText = `Prix: ${article.prix} € (${article.prix < 35 ? "€" : "€€€"})`;
-// // ...
-// document.body.appendChild(prixElement);
-
-// const fiche = document.createElement("p");
-// descriptionElement.innerText = article.description;
-
+sectionFiches.appendChild(descriptionElement);
+sectionFiches.appendChild(stockElement);
 
